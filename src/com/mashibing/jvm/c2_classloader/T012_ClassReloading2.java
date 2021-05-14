@@ -11,7 +11,7 @@ public class T012_ClassReloading2 {
     private static class MyLoader extends ClassLoader {
         @Override
         public Class<?> loadClass(String name) throws ClassNotFoundException {
-
+            //不再find in Cache
             File f = new File("C:/work/ijprojects/JVM/out/production/JVM/" + name.replace(".", "/").concat(".class"));
 
             if(!f.exists()) return super.loadClass(name);
